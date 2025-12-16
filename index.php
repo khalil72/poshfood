@@ -1,66 +1,36 @@
 <?php 
 include("_head.php");
+include("_topbar.php");
 include("navbar.php");
+
 ?>
 
- 
-    <section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+
+<section class="home-slider owl-carousel img" >
       <div class="slider-item">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-
-            <div class="col-md-6 col-sm-12 ftco-animate">
-            	<span class="subheading">Delicious</span>
-              <h1 class="mb-4">Italian Cuizine</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
-            </div>
-            <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_1.png" class="img-fluid" alt="">
-            </div>
-
-          </div>
-        </div>
+		<div class="ftco-animate">
+				<img src="images/Calibite_banner1.png" class="img-fluid" alt="">
+		</div>
+	
+     
       </div>
 
       <div class="slider-item">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-
-            <div class="col-md-6 col-sm-12 order-md-last ftco-animate">
-            	<span class="subheading">Crunchy</span>
-              <h1 class="mb-4">Italian Pizza</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
-            </div>
-            <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_2.png" class="img-fluid" alt="">
-            </div>
-
-          </div>
-        </div>
+		<div class="ftco-animate">
+				<img src="images/Calibite_banners2.png" class="img-fluid" alt="">
+		</div>
+      
       </div>
-
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<span class="subheading">Welcome</span>
-              <h1 class="mb-4">We cooked your desired Pizza Recipe</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
-            </div>
-
-          </div>
+	    <div class="slider-item">
+			<div class="ftco-animate">
+					<img src="images/Calibite_banners3.png" class="img-fluid" alt="">
+			</div>
         </div>
-      </div>
+
+   
     </section>
 
-    <section class="ftco-intro">
+    <!-- <section class="ftco-intro">
     	<div class="container-wrap">
     		<div class="wrap d-md-flex">
 	    		<div class="info">
@@ -97,610 +67,440 @@ include("navbar.php");
 	    		</div>
     		</div>
     	</div>
-    </section>
+    </section> -->
 
-    <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url(images/about.jpg);"></div>
-    	<div class="one-half ftco-animate">
-        <div class="heading-section ftco-animate ">
-          <h2 class="mb-4">Welcome to <span class="flaticon-pizza">Pizza</span> A Restaurant</h2>
-        </div>
-        <div>
-  				<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-  			</div>
-    	</div>
-    </section>
+   <section class="ftco-about d-flex align-items-center min-vh-100 mt-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
 
-    <section class="ftco-section ftco-services">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Our Services</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-    		<div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5">
-              	<span class="flaticon-diet"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Healthy Foods</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5">
-              	<span class="flaticon-bicycle"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Fastest Delivery</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5"><span class="flaticon-pizza-1"></span></div>
-              <div class="media-body">
-                <h3 class="heading">Original Recipes</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>    
-          </div>
-        </div>
-    	</div>
-    </section>
+      <!-- Image Column -->
+      <div class="col-md-6 ">
+         <img
+          src="images/mockup1b.png"
+          alt="Healthy Meals"
+          class="about-img img-fluid"
+        />
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Hot Pizza Meals</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-    	</div>
-    	<div class="container-wrap">
-    		<div class="row no-gutters d-flex">
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img" style="background-image: url(images/pizza-1.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>Italian Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia </p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img" style="background-image: url(images/pizza-2.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>Greek Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img" style="background-image: url(images/pizza-3.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>Caucasian Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
+       
+      </div>
 
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-4.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>American Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia </p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-5.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>Tomatoe Pie</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-4 d-flex ftco-animate">
-    				<div class="services-wrap d-flex">
-    					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-6.jpg);"></a>
-    					<div class="text p-4">
-    						<h3>Margherita</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Our Menu Pricing</h2>
-            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-            <p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
+      <!-- Content Column -->
+      <div class="col-md-6 text-left">
+        <div class="heading-section">
+          <h2 class="mb-4">
+            Chef-Prepared Healthy Meals Delivered Fresh Every Week
+          </h2>
         </div>
+
+        <p class="mb-4">
+          Fresh, chef-made meals crafted to support your personal health goals.
+          Our healthy meal prep is delivered weekly and designed for weight loss,
+          muscle gain, or simply eating better. Every dish is cooked fresh using
+          balanced, nutritious ingredients and stays delicious all week.
+        </p>
+
+        <a href="#menu" class="btn btn-primary py-3 px-4">
+          See the Menu
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="ftco-section bg-primary mt-5 mb-5 ">
+  <div class="container">
+
+  
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-3 text-white">How It Works</h2>
+        <p class="text-white-50">
+          Getting healthy meals is simple, fast, and hassle-free.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      
+      <div class="col-md-4 mb-4">
+        <div class="work-step text-center">
+          <span class="step-number">01</span>
+          <div class="step-icon">🥗</div>
+          <h4>Pick Your Meals</h4>
+          <p>
+            Choose from our weekly chef-designed menu tailored to your goals.
+          </p>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4 mb-4">
+        <div class="work-step text-center">
+          <span class="step-number">02</span>
+          <div class="step-icon">👨‍🍳</div>
+          <h4>Fresh Cooking</h4>
+          <p>
+            Our chefs cook your meals fresh using premium, balanced ingredients.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="work-step text-center">
+          <span class="step-number">03</span>
+          <div class="step-icon">🚚</div>
+          <h4>Doorstep Delivery</h4>
+          <p>
+            Receive fresh meals weekly, ready to heat and enjoy anytime.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  
+
+   <section class="ftco-menu py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-3">Explore Our Calibite Menu</h2>
+        <p class="text-muted">Delicious meals and drinks prepared fresh, just for you. Choose your favorites and enjoy healthy eating!</p>
+      </div>
+    </div>
+
+    <div class="row d-md-flex">
+      <!-- Image Column -->
+      <div class="col-lg-4 ftco-animate img f-menu-img mb-5 mb-md-0" style="background-image: url('images/about.jpg'); border-radius: 10px;"></div>
+
+      <!-- Menu Content -->
+      <div class="col-lg-8 ftco-animate p-md-5">
         <div class="row">
-        	<div class="col-md-6">
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-1.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Italian Pizza</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-        			</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-2.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Hawaiian Pizza</span></h3>
-	        				<span class="price">$29.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-3.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Greek Pizza</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-4.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Bacon Crispy Thins</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        	</div>
+          <!-- Categories -->
+          <div class="col-md-12 nav-link-wrap mb-4 text-center">
+            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Healthy Meals</a>
+              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Smoothies</a>
+              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Snacks</a>
+              <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Desserts</a>
+            </div>
+          </div>
 
-        	<div class="col-md-6">
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-5.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Hawaiian Special</span></h3>
-	        				<span class="price">$49.91</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-6.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Ultimate Overload</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-7.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Bacon Pizza</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-8.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Ham &amp; Pineapple</span></h3>
-	        				<span class="price">$20.00</span>
-	        			</div>
-	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
-	        			</div>
-	        		</div>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
+          <!-- Menu Items -->
+          <div class="col-md-12 d-flex align-items-center">
+            <div class="tab-content ftco-animate text-center" id="v-pills-tabContent">
 
-    <section class="ftco-gallery">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
+              <!-- Healthy Meals -->
+              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                <div class="row g-4 justify-content-center">
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-1.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Grilled Chicken Bowl</a></h5>
+                        <p>Freshly grilled chicken with quinoa, veggies, and our signature sauce.</p>
+                        <p class="price"><span>$8.90</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-2.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Salmon Salad</a></h5>
+                        <p>Fresh salmon served on a bed of leafy greens with avocado dressing.</p>
+                        <p class="price"><span>$9.50</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
 
-		<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-        	<div class="col-md-10">
-        		<div class="row">
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<div class="icon"><span class="flaticon-pizza-1"></span></div>
-		              	<strong class="number" data-number="100">0</strong>
-		              	<span>Pizza Branches</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<div class="icon"><span class="flaticon-medal"></span></div>
-		              	<strong class="number" data-number="85">0</strong>
-		              	<span>Number of Awards</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<div class="icon"><span class="flaticon-laugh"></span></div>
-		              	<strong class="number" data-number="10567">0</strong>
-		              	<span>Happy Customer</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<div class="icon"><span class="flaticon-chef"></span></div>
-		              	<strong class="number" data-number="900">0</strong>
-		              	<span>Staff</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-3.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Veggie Power Bowl</a></h5>
+                        <p>A mix of fresh vegetables, beans, and grains for a healthy boost.</p>
+                        <p class="price"><span>$7.90</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Smoothies -->
+              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                <div class="row g-4 justify-content-center">
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-1.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Green Detox Smoothie</a></h5>
+                        <p>Spinach, kale, apple, and banana blended to perfection.</p>
+                        <p class="price"><span>$5.50</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-2.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Berry Blast</a></h5>
+                        <p>Strawberries, blueberries, and raspberries with almond milk.</p>
+                        <p class="price"><span>$5.90</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-3.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Tropical Smoothie</a></h5>
+                        <p>Mango, pineapple, and coconut blended into a refreshing drink.</p>
+                        <p class="price"><span>$6.00</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Snacks -->
+              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+                <div class="row g-4 justify-content-center">
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-1.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Protein Bar</a></h5>
+                        <p>Healthy snack packed with protein for energy throughout the day.</p>
+                        <p class="price"><span>$3.50</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-2.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Veggie Wrap</a></h5>
+                        <p>Fresh veggies wrapped in a soft tortilla for a quick snack.</p>
+                        <p class="price"><span>$4.20</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-3.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Trail Mix</a></h5>
+                        <p>A mix of nuts, seeds, and dried fruits for a healthy bite.</p>
+                        <p class="price"><span>$3.80</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desserts -->
+              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
+                <div class="row g-4 justify-content-center">
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-1.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Protein Muffin</a></h5>
+                        <p>Delicious muffin packed with protein for a healthy treat.</p>
+                        <p class="price"><span>$4.00</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-2.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Fruit Parfait</a></h5>
+                        <p>Layers of yogurt, fresh fruit, and granola for a sweet snack.</p>
+                        <p class="price"><span>$4.50</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <div class="menu-wrap">
+                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-3.jpg'); border-radius: 10px;"></a>
+                      <div class="text">
+                        <h5><a href="#">Chia Pudding</a></h5>
+                        <p>Healthy chia pudding with almond milk and fresh fruits.</p>
+                        <p class="price"><span>$4.20</span></p>
+                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="ftco-menu">
-    	<div class="container-fluid">
-    		<div class="row d-md-flex">
-	    		<div class="col-lg-4 ftco-animate img f-menu-img mb-5 mb-md-0" style="background-image: url(images/about.jpg);">
-	    		</div>
-	    		<div class="col-lg-8 ftco-animate p-md-5">
-		    		<div class="row">
-		          <div class="col-md-12 nav-link-wrap mb-5">
-		            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Pizza</a>
 
-		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
 
-		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Burgers</a>
-
-		              <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Pasta</a>
-		            </div>
-		          </div>
-		          <div class="col-md-12 d-flex align-items-center">
-		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-
-		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-		              	<div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 		
-		<section class="ftco-appointment">
-			<div class="overlay"></div>
-    	<div class="container-wrap">
-    		<div class="row no-gutters d-md-flex align-items-center">
-    			<div class="col-md-6 d-flex align-self-stretch">
-    				<div id="map"></div>
-    			</div>
-	    		<div class="col-md-6 appointment ftco-animate">
-	    			<h3 class="mb-3">Contact Us</h3>
-	    			<form action="#" class="appointment-form">
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
-		    				</div>
-	    				</div>
-	    				<div class="d-me-flex">
-	    					<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Last Name">
-		    				</div>
-	    				</div>
-	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-	            </div>
-	            <div class="form-group">
-	              <input type="submit" value="Send" class="btn btn-primary py-3 px-4">
-	            </div>
-	    			</form>
-	    		</div>    			
-    		</div>
-    	</div>
-    </section>
+		
+	<section class="ftco-section py-5 mt-5 ">
+  <div class="container ftco-animate">
+    <!-- Heading -->
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-3">What Our Clients Say</h2>
+        <p class="text-muted">Hear from our satisfied clients about their experience with Calibite.</p>
+      </div>
+    </div>
 
+   
+    <div class="row g-4">
+
+      
+      <div class="col-md-4">
+        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
+          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 1" width="100" height="100">
+          <h5 class="fw-bold mb-1">Sarah Williams</h5>
+          <small class="text-success mb-3 d-block">Food Enthusiast</small>
+          <p class="fst-italic mb-0">"Calibite’s meals are fresh, tasty, and convenient. I love the weekly subscription—it saves so much time!"</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
+          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 2" width="100" height="100">
+          <h5 class="fw-bold mb-1">James Peterson</h5>
+          <small class="text-success mb-3 d-block">Entrepreneur</small>
+          <p class="fst-italic mb-0">"The delivery is always on time and the food never disappoints. Highly recommend Calibite!"</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
+          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 3" width="100" height="100">
+          <h5 class="fw-bold mb-1">Emily Davis</h5>
+          <small class="text-success mb-3 d-block">Marketing Manager</small>
+          <p class="fst-italic mb-0">"I love customizing my weekly meal plan. The service is friendly and professional."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+	<section class="faq-section py-5 bg-light">
+  <div class="container ftco-animate">
+    <div class="row ">
+      <!-- Left Text -->
+      <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+        <h2 class="fw-bold mb-3 faq-heading">
+          Have Questions?<br>
+          <span class="text-success">We Have Answers</span>
+        </h2>
+        <p class="text-muted">
+          Find quick answers about our services, delivery, and subscription plans to get started with confidence.
+        </p>
+        <a href="#how-it-works" class="btn btn-dark rounded mt-2">How It Works</a>
+      </div>
+   
+      <div class="col-md-8">
+        <div class="accordion" id="faqAccordion">
+         
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button faq-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How do I place an order?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body p-2">
+                Simply browse our menu, choose your meals, and add them to your cart. You can place a one-time order or subscribe weekly.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What areas do you deliver to?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body p-2">
+                We currently deliver to all major cities across the country. Enter your address at checkout to confirm availability.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How fresh are your meals?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body p-2">
+                All meals are prepared fresh and delivered immediately. You can keep them refrigerated for up to 5 days.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Can I customize my subscription plan?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes! You can mix and match meals, choose delivery days, and pause or cancel your subscription anytime.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Are there any hidden fees?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body p-2">
+                No hidden fees. All prices are transparent and clearly displayed at checkout, including delivery charges.
+              </div>
+            </div>
+          </div>
+          <!-- End FAQ Items -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 	<?php 
 include("_footer.php")
 ?>

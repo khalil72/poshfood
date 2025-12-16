@@ -2,7 +2,7 @@
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 		      <a class="navbar-brand" href="index.php">
-				<img src="images/Calibite_logo.png" alt="Logo" height="50" class="logo-white">
+				<img src="images/white_logo.svg" alt="Logo" height="80" >
 
 
 			  </a>
@@ -12,11 +12,10 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Our MENU</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">How Its Work</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+	        
 	        </ul>
 	      </div>
 		  </div>

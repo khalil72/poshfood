@@ -1,0 +1,234 @@
+.about-img 
+{border-radius: 20px;
+    height: 400px;
+    width: 100%;
+    object-fit: fill;
+}
+
+.banner-bg {
+    background:#4A7059 !important;
+   
+}
+
+.how-it-works {
+  /* background: linear-gradient(135deg, #2f8f46, #4caf50); */
+}
+
+.work-step {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 30px 40px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.work-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  background: #4caf50;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #f4fdf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.work-step h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.work-step p {
+  color: #666;
+  font-size: 15px;
+}
+
+.faq-section {
+  background: #f9fafb;
+}
+
+.faq-tabs .nav-link {
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 14px 18px;
+  color: #333;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.faq-tabs .nav-link.active {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+.faq-tabs .nav-link:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+.faq-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.faq-content h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.faq-content p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.faq-tabs .nav-link {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 14px 18px;
+  font-weight: 500;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.faq-tabs .nav-link.active,
+.faq-tabs .nav-link:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+.faq-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background: #f8f9fa;
+  font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #9AAC40;
+  color: #fff;
+}
+ .faq-heading {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  /* Accordion button custom styling */
+  .faq-btn {
+    position: relative;
+    font-weight: 500;
+    font-size: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-right: 2.5rem;
+  }
+
+  /* Add + / - icons */
+  .faq-btn::after {
+    content: "+";
+    position: absolute;
+    right: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, content 0.2s ease;
+  }
+
+  .faq-btn.collapsed::after {
+    content: "+";
+  }
+
+  .faq-btn:not(.collapsed)::after {
+    content: "–";
+  }
+
+  /* Accordion body styling */
+  .accordion-body {
+    background-color: #fff;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Add subtle shadow and rounded effect */
+  .accordion-item {
+    transition: all 0.3s ease;
+  }
+
+  .accordion-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .testimonial-section {
+  background: #f8f9fa;
+}
+.carousel-item .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.carousel-item .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%;
+}
+@media (max-width: 767px) {
+  .carousel-item .card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.ftco-testimonial .item {
+  padding: 15px;
+}
+.testimonial-content p {
+  font-size: 1rem;
+  color: #555;
+}
+.testimonial-card {
+  background: #fff;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.testimonial-card img {
+  border: 3px solid #28a745;
+}
