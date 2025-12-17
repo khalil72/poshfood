@@ -1564,8 +1564,8 @@ pre {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border: 2px solid #ced4da;
+  border-radius: 1rem;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2870,10 +2870,10 @@ input[type="button"].btn-block {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #8FA89A;
   text-align: center;
   white-space: nowrap;
-  background-color: #e9ecef;
+  background-color: white;
   border: 1px solid #ced4da;
   border-radius: 0.25rem; }
   .input-group-text input[type="radio"],
@@ -8111,17 +8111,17 @@ h1, h2, h3, h4, h5,
     color: #8FA89A; }
 
 .form-control {
-  height: 58px !important;
+  height: auto !important;
   background: transparent !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 18px;
-  border-radius: 0px;
+  color: black important;
+  font-size: 16px;
+  border-radius: 1px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: transparent !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  padding-right: 0;
-  padding-left: 0; }
+  border-bottom: 1px solid black !important;
+  padding-right: 1px;
+  padding-left: 1px; }
   .form-control:focus, .form-control:active {
     border-color: #8FA89A; }
 
@@ -8662,9 +8662,9 @@ textarea.form-control {
 .contact-form .form-control {
   border: transparent !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  height: 58px !important;
-  padding-left: 0;
-  padding-right: 0;
+   height: auto !important; 
+  /* padding-left: 0;
+  padding-right: 0; */
   background: transparent !important;
   color: rgba(255, 255, 255, 0.9) !important;
   font-size: 13px;
