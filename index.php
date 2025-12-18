@@ -2,425 +2,279 @@
 include("_head.php");
 include("_topbar.php");
 include("navbar.php");
+include("includes/db.php");
 
+
+$lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'en';
+$_SESSION['lang'] = $lang;
+
+$langFile = "lang/$lang.php";
+if (!file_exists($langFile)) { $langFile = "lang/en.php"; }
+$trans = include $langFile;
+
+// -------------------- Helper: Translate Product Text via Google API --------------------
+function translateText($text, $target = 'en') {
+    $text = urlencode($text);
+    $url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$target&dt=t&q=$text";
+    $response = file_get_contents($url);
+    $result = json_decode($response, true);
+    return $result[0][0][0] ?? $text;
+}
+
+
+// Get all categories
+$categoriesQuery = "SELECT id, name FROM categories ORDER BY name ASC";
+$categoriesResult = mysqli_query($conn, $categoriesQuery);
+$categories = [];
+while ($cat = mysqli_fetch_assoc($categoriesResult)) {
+    $categories[] = $cat;
+}
+
+// Get all products with category info
+$productsQuery = "SELECT p.*, c.name AS category_name, c.id AS category_id 
+                  FROM products p 
+                  JOIN categories c ON c.id = p.category_id 
+                  ORDER BY c.name ASC, p.name ASC";
+$productsResult = mysqli_query($conn, $productsQuery);
+$allProducts = [];
+while ($prod = mysqli_fetch_assoc($productsResult)) {
+    $allProducts[] = $prod;
+}
+
+// Group products by category
+$productsByCategory = [];
+foreach ($allProducts as $product) {
+    $catId = $product['category_id'];
+    if (!isset($productsByCategory[$catId])) {
+        $productsByCategory[$catId] = [
+            'category_name' => $product['category_name'],
+            'products' => []
+        ];
+    }
+    $productsByCategory[$catId]['products'][] = $product;
+}
+
+define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158')); 
 ?>
+<div id="google_translate_element" style="display:none;"></div>
 
-
-<section class="home-slider owl-carousel img" >
-      <div class="slider-item">
-		<div class="ftco-animate">
-				<img src="images/Calibite_banner1.png" class="img-fluid" alt="">
-		</div>
-	
-     
-      </div>
-
-      <div class="slider-item">
-		<div class="ftco-animate">
-				<img src="images/Calibite_banners2.png" class="img-fluid" alt="">
-		</div>
-      
-      </div>
-	    <div class="slider-item">
-			<div class="ftco-animate">
-					<img src="images/Calibite_banners3.png" class="img-fluid" alt="">
-			</div>
+<section class="home-slider owl-carousel img">
+    <div class="slider-item">
+        <div class="ftco-animate">
+            <img src="images/Calibite_banner1.png" class="img-fluid" alt="">
         </div>
+    </div>
+    <div class="slider-item">
+        <div class="ftco-animate">
+            <img src="images/Calibite_banners2.png" class="img-fluid" alt="">
+        </div>
+    </div>
+    <div class="slider-item">
+        <div class="ftco-animate">
+            <img src="images/Calibite_banners3.png" class="img-fluid" alt="">
+        </div>
+    </div>
+</section>
 
-   
-    </section>
-
-    <!-- <section class="ftco-intro">
-    	<div class="container-wrap">
-    		<div class="wrap d-md-flex">
-	    		<div class="info">
-	    			<div class="row no-gutters">
-	    				<div class="col-md-4 d-flex ftco-animate">
-	    					<div class="icon"><span class="icon-phone"></span></div>
-	    					<div class="text">
-	    						<h3>000 (123) 456 7890</h3>
-	    						<p>A small river named Duden flows</p>
-	    					</div>
-	    				</div>
-	    				<div class="col-md-4 d-flex ftco-animate">
-	    					<div class="icon"><span class="icon-my_location"></span></div>
-	    					<div class="text">
-	    						<h3>198 West 21th Street</h3>
-	    						<p>Suite 721 New York NY 10016</p>
-	    					</div>
-	    				</div>
-	    				<div class="col-md-4 d-flex ftco-animate">
-	    					<div class="icon"><span class="icon-clock-o"></span></div>
-	    					<div class="text">
-	    						<h3>Open Monday-Friday</h3>
-	    						<p>8:00am - 9:00pm</p>
-	    					</div>
-	    				</div>
-	    			</div>
-	    		</div>
-	    		<div class="social d-md-flex pl-md-5 p-4 align-items-center">
-	    			<ul class="social-icon">
-              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
-	    		</div>
-    		</div>
-    	</div>
-    </section> -->
-
-   <section class="ftco-about d-flex align-items-center min-vh-100 mt-5 mb-5">
+<!-- About Section -->
+<section class="ftco-about d-flex align-items-center min-vh-100 mt-5 mb-5">
   <div class="container">
     <div class="row align-items-center">
 
       <!-- Image Column -->
-      <div class="col-md-6 ">
-         <img
-          src="images/mockup1b.png"
-          alt="Healthy Meals"
-          class="about-img img-fluid"
-        />
-
-       
+      <div class="col-md-6">
+         <img src="images/mockup1b.png" alt="Healthy Meals" class="about-img img-fluid"/>
       </div>
 
       <!-- Content Column -->
       <div class="col-md-6 text-left">
         <div class="heading-section">
-          <h2 class="mb-4">
-            Chef-Prepared Healthy Meals Delivered Fresh Every Week
-          </h2>
+          <h2 class="mb-4">Chef-Prepared Healthy Meals Delivered Fresh Every Week</h2>
         </div>
-
         <p class="mb-4">
           Fresh, chef-made meals crafted to support your personal health goals.
           Our healthy meal prep is delivered weekly and designed for weight loss,
           muscle gain, or simply eating better. Every dish is cooked fresh using
           balanced, nutritious ingredients and stays delicious all week.
         </p>
-
-        <a href="#menu" class="btn btn-primary py-3 px-4">
-          See the Menu
-        </a>
+        <a href="#menu" class="btn btn-primary py-3 px-4">See the Menu</a>
       </div>
 
     </div>
   </div>
 </section>
-<section class="ftco-section bg-primary mt-5 mb-5 ">
-  <div class="container">
 
-  
+<!-- How It Works -->
+<section class="ftco-section bg-primary mt-5 mb-5">
+  <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-8 text-center">
         <h2 class="mb-3 text-white">How It Works</h2>
-        <p class="text-white-50">
-          Getting healthy meals is simple, fast, and hassle-free.
-        </p>
+        <p class="text-white-50">Getting healthy meals is simple, fast, and hassle-free.</p>
       </div>
     </div>
-
     <div class="row">
-
-      
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">01</span>
           <div class="step-icon">🥗</div>
           <h4>Pick Your Meals</h4>
-          <p>
-            Choose from our weekly chef-designed menu tailored to your goals.
-          </p>
+          <p>Choose from our weekly chef-designed menu tailored to your goals.</p>
         </div>
       </div>
-
-      
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">02</span>
           <div class="step-icon">👨‍🍳</div>
           <h4>Fresh Cooking</h4>
-          <p>
-            Our chefs cook your meals fresh using premium, balanced ingredients.
-          </p>
+          <p>Our chefs cook your meals fresh using premium, balanced ingredients.</p>
         </div>
       </div>
-
-      <!-- Step 3 -->
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">03</span>
           <div class="step-icon">🚚</div>
           <h4>Doorstep Delivery</h4>
-          <p>
-            Receive fresh meals weekly, ready to heat and enjoy anytime.
-          </p>
+          <p>Receive fresh meals weekly, ready to heat and enjoy anytime.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
-  
-
-   <section class="ftco-menu py-5 bg-light">
+<!-- Products / Menu -->
+<section class="ftco-menu py-5 " id="menu">
   <div class="container">
+
+    <!-- Section Heading -->
     <div class="row justify-content-center mb-5">
-      <div class="col-md-8 text-center">
-        <h2 class="mb-3">Explore Our Calibite Menu</h2>
-        <p class="text-muted">Delicious meals and drinks prepared fresh, just for you. Choose your favorites and enjoy healthy eating!</p>
+      <div class="col-md-8 text-center animate-fade-in">
+        <h2 class="fw-bold mb-3">Explore Our Menu</h2>
+        <p class="text-muted">
+          Freshly prepared meals made with care.  
+          Order instantly via WhatsApp — fast & easy.
+        </p>
       </div>
     </div>
 
     <div class="row d-md-flex">
-      <!-- Image Column -->
-      <div class="col-lg-4 ftco-animate img f-menu-img mb-5 mb-md-0" style="background-image: url('images/about.jpg'); border-radius: 10px;"></div>
+      <div class="col-lg-4 d-none d-lg-block mb-4">
+        <div class="rounded-4 shadow-lg h-100 overflow-hidden position-relative hover-zoom"
+             style="background:url('images/about.jpg') center/cover; min-height:450px;">
+             <div class="image-overlay-text">
+                 <h4 class="text-white fw-bold">Fresh & Healthy</h4>
+             </div>
+        </div>
+      </div>
 
-      <!-- Menu Content -->
-      <div class="col-lg-8 ftco-animate p-md-5">
-        <div class="row">
-          <!-- Categories -->
-          <div class="col-md-12 nav-link-wrap mb-4 text-center">
-            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
-              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Healthy Meals</a>
-              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Smoothies</a>
-              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Snacks</a>
-              <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Desserts</a>
+      <div class="col-lg-8">
+        <!-- Tabs -->
+        <div class="text-center mb-5">
+          <div class="nav nav-pills justify-content-center custom-pills" role="tablist">
+            <a class="nav-link active" data-bs-toggle="pill" href="#all-products"><i class="fa fa-border-all me-1"></i> All</a>
+            <?php foreach ($categories as $category): ?>
+              <a class="nav-link" data-bs-toggle="pill" href="#cat-<?php echo $category['id']; ?>">
+                <?php echo htmlspecialchars($category['name']); ?>
+              </a>
+            <?php endforeach; ?>
+          </div>
+        </div>
+
+        <div class="tab-content">
+          <!-- All Products -->
+          <div class="tab-pane fade show active" id="all-products">
+            <div class="row g-4 justify-content-center">
+              <?php foreach (array_slice($allProducts, 0, 3) as $product): 
+                $msg = "Hello 👋 I want to order:\n\n";
+                $msg .= "*Product:* {$product['name']}\n";
+                $msg .= "*Price:* Rs " . number_format($product['price']) . "\n";
+                $msg .= "*Details:* {$product['description']}\n";
+                $msg .= "*Link:* " . "https://limo.idealdollarshop.com/product.php?id={$product['id']}";
+                $waLink = "https://wa.me/" . WHATSAPP_NUMBER . "?text=" . urlencode($msg);
+              ?>
+              <div class="col-sm-6 col-md-4 product-item">
+                <div class="card product-card border-0 shadow-sm h-100">
+                  <div class="position-relative overflow-hidden rounded-top-4">
+                    <img src="<?php echo !empty($product['image']) ? 'uploads/products/' . htmlspecialchars($product['image']) : 'images/default-product.jpg'; ?>" 
+                         class="card-img-top product-img" 
+                         alt="<?php echo htmlspecialchars($product['name']); ?>">
+                    <div class="price-tag">Rs <?php echo number_format($product['price']); ?></div>
+                  </div>
+                  <div class="card-body text-center p-3">
+                    <h6 class="fw-bold mb-2"><?php echo htmlspecialchars($product['name']); ?></h6>
+                    <a href="<?php echo $waLink; ?>" target="_blank" 
+                       class="btn btn-whatsapp w-100 rounded-pill order-btn"
+                       data-product-name="<?php echo htmlspecialchars($product['name']); ?>">
+                      <i class="fab fa-whatsapp me-2"></i> Order Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <?php endforeach; ?>
+              <div class="col-12 text-center mt-4">
+                <a href="all_products.php" class="btn btn-outline-dark px-5 py-2 rounded-pill fw-bold hover-lift">
+                  View Full Menu <i class="fa fa-arrow-right ms-2"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Menu Items -->
-          <div class="col-md-12 d-flex align-items-center">
-            <div class="tab-content ftco-animate text-center" id="v-pills-tabContent">
-
-              <!-- Healthy Meals -->
-              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                <div class="row g-4 justify-content-center">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-1.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Grilled Chicken Bowl</a></h5>
-                        <p>Freshly grilled chicken with quinoa, veggies, and our signature sauce.</p>
-                        <p class="price"><span>$8.90</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
+          <!-- Category Products -->
+          <?php foreach ($categories as $category): ?>
+          <div class="tab-pane fade" id="cat-<?php echo $category['id']; ?>">
+            <div class="row g-4 justify-content-center">
+              <?php 
+                $catProducts = $productsByCategory[$category['id']]['products'] ?? [];
+                if ($catProducts):
+                  foreach (array_slice($catProducts, 0, 6) as $product):
+                    $msg = "Hello 👋 I want to order:\n\n";
+                    $msg .= "*Product:* {$product['name']}\n";
+                    $msg .= "*Price:* Rs " . number_format($product['price']) . "\n";
+                    $msg .= "*Details:* {$product['description']}\n";
+                    $msg .= "*Link:* " . "https://limo.idealdollarshop.com/singleProduct.php?id={$product['id']}";
+                    $waLink = "https://wa.me/" . WHATSAPP_NUMBER . "?text=" . urlencode($msg);
+              ?>
+              <div class="col-sm-6 col-md-4 product-item">
+                <div class="card product-card border-0 shadow-sm h-100">
+                  <div class="position-relative overflow-hidden rounded-top-4">
+                   
+                    <a href="singleProduct.php?id=<?php echo $product['id']; ?>" class="d-block overflow-hidden rounded-top-4">
+            <img src="<?php echo !empty($product['image']) ? 'uploads/products/' . htmlspecialchars($product['image']) : 'images/default-product.jpg'; ?>" 
+                 class="card-img-top product-img img-fluid" 
+                 alt="<?php echo htmlspecialchars($product['name']); ?>" 
+                 style="transition: transform 0.3s ease;">
+        </a>
+                    <div class="price-tag">Rs <?php echo number_format($product['price']); ?></div>
                   </div>
-
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-2.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Salmon Salad</a></h5>
-                        <p>Fresh salmon served on a bed of leafy greens with avocado dressing.</p>
-                        <p class="price"><span>$9.50</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pizza-3.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Veggie Power Bowl</a></h5>
-                        <p>A mix of fresh vegetables, beans, and grains for a healthy boost.</p>
-                        <p class="price"><span>$7.90</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
+                  <div class="card-body text-center p-3">
+                    <h6 class="fw-bold mb-2"><?php echo htmlspecialchars($product['name']); ?></h6>
+                    <a href="<?php echo $waLink; ?>" target="_blank" 
+                       class="btn btn-whatsapp w-100 rounded-pill order-btn"
+                       data-product-name="<?php echo htmlspecialchars($product['name']); ?>">
+                      <i class="fab fa-whatsapp me-2"></i> Order Now
+                    </a>
                   </div>
                 </div>
               </div>
-
-              <!-- Smoothies -->
-              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-                <div class="row g-4 justify-content-center">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-1.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Green Detox Smoothie</a></h5>
-                        <p>Spinach, kale, apple, and banana blended to perfection.</p>
-                        <p class="price"><span>$5.50</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-2.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Berry Blast</a></h5>
-                        <p>Strawberries, blueberries, and raspberries with almond milk.</p>
-                        <p class="price"><span>$5.90</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/drink-3.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Tropical Smoothie</a></h5>
-                        <p>Mango, pineapple, and coconut blended into a refreshing drink.</p>
-                        <p class="price"><span>$6.00</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <?php endforeach; else: ?>
+              <div class="col-12 text-center py-5">
+                <i class="fa fa-box-open fa-3x text-muted mb-3"></i>
+                <p class="text-muted">No products found in this category.</p>
               </div>
-
-              <!-- Snacks -->
-              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-                <div class="row g-4 justify-content-center">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-1.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Protein Bar</a></h5>
-                        <p>Healthy snack packed with protein for energy throughout the day.</p>
-                        <p class="price"><span>$3.50</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-2.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Veggie Wrap</a></h5>
-                        <p>Fresh veggies wrapped in a soft tortilla for a quick snack.</p>
-                        <p class="price"><span>$4.20</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/burger-3.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Trail Mix</a></h5>
-                        <p>A mix of nuts, seeds, and dried fruits for a healthy bite.</p>
-                        <p class="price"><span>$3.80</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Desserts -->
-              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
-                <div class="row g-4 justify-content-center">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-1.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Protein Muffin</a></h5>
-                        <p>Delicious muffin packed with protein for a healthy treat.</p>
-                        <p class="price"><span>$4.00</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-2.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Fruit Parfait</a></h5>
-                        <p>Layers of yogurt, fresh fruit, and granola for a sweet snack.</p>
-                        <p class="price"><span>$4.50</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-3" style="background-image: url('images/pasta-3.jpg'); border-radius: 10px;"></a>
-                      <div class="text">
-                        <h5><a href="#">Chia Pudding</a></h5>
-                        <p>Healthy chia pudding with almond milk and fresh fruits.</p>
-                        <p class="price"><span>$4.20</span></p>
-                        <p><a href="#" class="btn btn-success btn-outline-success">Add to Cart</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              <?php endif; ?>
             </div>
           </div>
-
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-		
-		
-	<section class="ftco-section py-5 mt-5 ">
+<!-- FAQ Section -->
+<section class="faq-section py-5 bg-light">
   <div class="container ftco-animate">
-    <!-- Heading -->
-    <div class="row justify-content-center mb-3">
-      <div class="col-md-8 text-center">
-        <h2 class="mb-3">What Our Clients Say</h2>
-        <p class="text-muted">Hear from our satisfied clients about their experience with Calibite.</p>
-      </div>
-    </div>
-
-   
-    <div class="row g-4">
-
-      
-      <div class="col-md-4">
-        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
-          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 1" width="100" height="100">
-          <h5 class="fw-bold mb-1">Sarah Williams</h5>
-          <small class="text-success mb-3 d-block">Food Enthusiast</small>
-          <p class="fst-italic mb-0">"Calibite’s meals are fresh, tasty, and convenient. I love the weekly subscription—it saves so much time!"</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
-          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 2" width="100" height="100">
-          <h5 class="fw-bold mb-1">James Peterson</h5>
-          <small class="text-success mb-3 d-block">Entrepreneur</small>
-          <p class="fst-italic mb-0">"The delivery is always on time and the food never disappoints. Highly recommend Calibite!"</p>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="col-md-4">
-        <div class="card testimonial-card p-4 shadow-sm h-100 text-center">
-          <img src="images/gallery-3.jpg" class="rounded-circle mb-3 mx-auto" alt="Client 3" width="100" height="100">
-          <h5 class="fw-bold mb-1">Emily Davis</h5>
-          <small class="text-success mb-3 d-block">Marketing Manager</small>
-          <p class="fst-italic mb-0">"I love customizing my weekly meal plan. The service is friendly and professional."</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-	<section class="faq-section py-5 bg-light">
-  <div class="container ftco-animate">
-    <div class="row ">
-      <!-- Left Text -->
+    <div class="row">
       <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
         <h2 class="fw-bold mb-3 faq-heading">
           Have Questions?<br>
@@ -431,78 +285,72 @@ include("navbar.php");
         </p>
         <a href="#how-it-works" class="btn btn-dark rounded mt-2">How It Works</a>
       </div>
-   
       <div class="col-md-8">
         <div class="accordion" id="faqAccordion">
-         
+          <?php 
+          $faqs = [
+            "How do I place an order?" => "Simply browse our menu, choose your meals, and add them to your cart. You can place a one-time order or subscribe weekly.",
+            "What areas do you deliver to?" => "We currently deliver to all major cities across the country. Enter your address at checkout to confirm availability.",
+            "How fresh are your meals?" => "All meals are prepared fresh and delivered immediately. You can keep them refrigerated for up to 5 days.",
+            "Can I customize my subscription plan?" => "Yes! You can mix and match meals, choose delivery days, and pause or cancel your subscription anytime.",
+            "Are there any hidden fees?" => "No hidden fees. All prices are transparent and clearly displayed at checkout, including delivery charges."
+          ];
+          $i = 1;
+          foreach ($faqs as $q => $a): ?>
           <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button faq-btn btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                How do I place an order?
+            <h2 class="accordion-header" id="heading<?php echo $i; ?>">
+              <button class="accordion-button faq-btn btn <?php echo $i!==1 ? 'collapsed':''; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="<?php echo $i===1 ? 'true':'false'; ?>" aria-controls="collapse<?php echo $i; ?>">
+                <?php echo $q; ?>
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-              <div class="accordion-body p-2">
-                Simply browse our menu, choose your meals, and add them to your cart. You can place a one-time order or subscribe weekly.
-              </div>
+            <div id="collapse<?php echo $i; ?>" class="accordion-collapse collapse <?php echo $i===1 ? 'show':''; ?>" aria-labelledby="heading<?php echo $i; ?>" data-bs-parent="#faqAccordion">
+              <div class="accordion-body p-2"><?php echo $a; ?></div>
             </div>
           </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                What areas do you deliver to?
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-              <div class="accordion-body p-2">
-                We currently deliver to all major cities across the country. Enter your address at checkout to confirm availability.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                How fresh are your meals?
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-              <div class="accordion-body p-2">
-                All meals are prepared fresh and delivered immediately. You can keep them refrigerated for up to 5 days.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Can I customize my subscription plan?
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Yes! You can mix and match meals, choose delivery days, and pause or cancel your subscription anytime.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="headingFive">
-              <button class="accordion-button faq-btn btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Are there any hidden fees?
-              </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-              <div class="accordion-body p-2">
-                No hidden fees. All prices are transparent and clearly displayed at checkout, including delivery charges.
-              </div>
-            </div>
-          </div>
-          <!-- End FAQ Items -->
+          <?php $i++; endforeach; ?>
         </div>
       </div>
     </div>
   </div>
 </section>
-	<?php 
-include("_footer.php")
-?>
-  
+
+<?php include("_subfooter.php") ?>
+
+<?php include("_footer.php"); ?>
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Product hover animation
+  document.querySelectorAll('.product-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.transform = 'translateY(-10px)';
+      item.style.transition = 'all 0.3s ease';
+      item.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'translateY(0)';
+      item.style.boxShadow = 'none';
+    });
+  });
+
+  // Order Now button - show toast
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const productName = btn.getAttribute('data-product-name');
+      showToast(productName + ' added to cart!');
+    });
+  });
+
+  // Toast notification
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.innerHTML = `<div class="toast-content"><i class="fa fa-check-circle me-2"></i>${message}</div>`;
+    document.body.appendChild(toast);
+    setTimeout(() => { toast.classList.add('show'); }, 100);
+    setTimeout(() => { toast.classList.remove('show'); setTimeout(()=>document.body.removeChild(toast),300); }, 3000);
+  }
+});
+</script>
+
 

@@ -14,7 +14,7 @@ $time_remaining = sprintf(
 );
 ?>
 
-<section class="next-order-cutoff py-3" style="background: #fff;">
+<section class="next-order-cutoff py-2 pb-2" style="background: #fff;">
     <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
         
         <div>
@@ -27,7 +27,7 @@ $time_remaining = sprintf(
 
        
         <div class="mx-3">
-            <a href="order.php" class="btn btn-primary btn-lg">Order Now</a>
+            <a href="order.php" class="btn btn-primary btn-sm">Order Now</a>
         </div>
     </div>
 </section>

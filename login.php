@@ -3,7 +3,7 @@ include("_head.php");
 include("navbar.php");
 include("includes/db.php");
 
-session_start(); 
+// session_start(); 
 if (isset($_SESSION['admin_id'])) {
     header("Location: dashboard.php");
     exit;
