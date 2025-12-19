@@ -89,15 +89,19 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
       <!-- Content Column -->
       <div class="col-md-6 text-left">
         <div class="heading-section">
-          <h2 class="mb-4">Chef-Prepared Healthy Meals Delivered Fresh Every Week</h2>
+          <h2 class="mb-4">
+                <?php echo $trans['how_it_works_text']; ?>
+          </h2>
         </div>
-        <p class="mb-4">
-          Fresh, chef-made meals crafted to support your personal health goals.
-          Our healthy meal prep is delivered weekly and designed for weight loss,
-          muscle gain, or simply eating better. Every dish is cooked fresh using
-          balanced, nutritious ingredients and stays delicious all week.
-        </p>
-        <a href="#menu" class="btn btn-primary py-3 px-4">See the Menu</a>
+         <p class="mb-4">
+  <?php echo $trans['how_it_works_desc']; ?>
+</p>
+
+<a href="all_products.php" class="btn btn-primary py-3 px-4">
+  <?php echo $trans['see_menu']; ?>
+</a>
+
+        
       </div>
 
     </div>
@@ -109,8 +113,8 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-8 text-center">
-        <h2 class="mb-3 text-white">How It Works</h2>
-        <p class="text-white-50">Getting healthy meals is simple, fast, and hassle-free.</p>
+        <h2 class="mb-3 text-white"><?php echo $trans['how_it_works']; ?></h2>
+        <p class="text-white-50"><?php echo $trans['how_it_works_text']; ?></p>
       </div>
     </div>
     <div class="row">
@@ -118,24 +122,29 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
         <div class="work-step text-center">
           <span class="step-number">01</span>
           <div class="step-icon">🥗</div>
-          <h4>Pick Your Meals</h4>
-          <p>Choose from our weekly chef-designed menu tailored to your goals.</p>
+         <h4><?php echo $trans['step_pick']; ?></h4>
+<p><?php echo $trans['step_pick_desc']; ?></p>
+
+
+
+
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">02</span>
           <div class="step-icon">👨‍🍳</div>
-          <h4>Fresh Cooking</h4>
-          <p>Our chefs cook your meals fresh using premium, balanced ingredients.</p>
+    <h4><?php echo $trans['step_cook']; ?></h4>
+<p><?php echo $trans['step_cook_desc']; ?></p>
+
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">03</span>
           <div class="step-icon">🚚</div>
-          <h4>Doorstep Delivery</h4>
-          <p>Receive fresh meals weekly, ready to heat and enjoy anytime.</p>
+         <h4><?php echo $trans['step_delivery']; ?></h4>
+<p><?php echo $trans['step_delivery_desc']; ?></p>
         </div>
       </div>
     </div>
@@ -149,10 +158,9 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
     <!-- Section Heading -->
     <div class="row justify-content-center mb-5">
       <div class="col-md-8 text-center animate-fade-in">
-        <h2 class="fw-bold mb-3">Explore Our Menu</h2>
+        <h2 class="fw-bold mb-3"><?php echo $trans['explore_menu']; ?></h2>
         <p class="text-muted">
-          Freshly prepared meals made with care.  
-          Order instantly via WhatsApp — fast & easy.
+        <?php echo $trans['menu_desc']; ?>
         </p>
       </div>
     </div>
@@ -162,7 +170,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
         <div class="rounded-4 shadow-lg h-100 overflow-hidden position-relative hover-zoom"
              style="background:url('images/about.jpg') center/cover; min-height:450px;">
              <div class="image-overlay-text">
-                 <h4 class="text-white fw-bold">Fresh & Healthy</h4>
+                 <!-- <h4 class="text-white fw-bold">Fresh & Healthy</h4> -->
              </div>
         </div>
       </div>
@@ -213,7 +221,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
               <?php endforeach; ?>
               <div class="col-12 text-center mt-4">
                 <a href="all_products.php" class="btn btn-outline-dark px-5 py-2 rounded-pill fw-bold hover-lift">
-                  View Full Menu <i class="fa fa-arrow-right ms-2"></i>
+                   <?php echo $trans['view_full_menu']; ?> <i class="fa fa-arrow-right ms-2"></i>
                 </a>
               </div>
             </div>
@@ -271,48 +279,55 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
   </div>
 </section>
 
-<!-- FAQ Section -->
+<!-- /faq section -->
 <section class="faq-section py-5 bg-light">
   <div class="container ftco-animate">
     <div class="row">
-      <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+      
+      <!-- Left Content -->
+      <div class="col-md-4 mb-4 text-center text-md-start">
         <h2 class="fw-bold mb-3 faq-heading">
-          Have Questions?<br>
-          <span class="text-success">We Have Answers</span>
+          <?php echo $trans['faq_heading']; ?><br>
+          <span class="text-success"><?php echo $trans['faq_subheading']; ?></span>
         </h2>
-        <p class="text-muted">
-          Find quick answers about our services, delivery, and subscription plans to get started with confidence.
-        </p>
-        <a href="#how-it-works" class="btn btn-dark rounded mt-2">How It Works</a>
+
+        <a href="#how-it-works" class="btn btn-dark rounded mt-2">
+          <?php echo $trans['faq_button']; ?>
+        </a>
       </div>
+
       <div class="col-md-8">
         <div class="accordion" id="faqAccordion">
-          <?php 
-          $faqs = [
-            "How do I place an order?" => "Simply browse our menu, choose your meals, and add them to your cart. You can place a one-time order or subscribe weekly.",
-            "What areas do you deliver to?" => "We currently deliver to all major cities across the country. Enter your address at checkout to confirm availability.",
-            "How fresh are your meals?" => "All meals are prepared fresh and delivered immediately. You can keep them refrigerated for up to 5 days.",
-            "Can I customize my subscription plan?" => "Yes! You can mix and match meals, choose delivery days, and pause or cancel your subscription anytime.",
-            "Are there any hidden fees?" => "No hidden fees. All prices are transparent and clearly displayed at checkout, including delivery charges."
-          ];
-          $i = 1;
-          foreach ($faqs as $q => $a): ?>
+
+          <?php foreach ($trans['faqs'] as $i => $faq): ?>
           <div class="accordion-item border-0 mb-3 shadow-sm rounded">
-            <h2 class="accordion-header" id="heading<?php echo $i; ?>">
-              <button class="accordion-button faq-btn btn <?php echo $i!==1 ? 'collapsed':''; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="<?php echo $i===1 ? 'true':'false'; ?>" aria-controls="collapse<?php echo $i; ?>">
-                <?php echo $q; ?>
+            <h2 class="accordion-header">
+              <button class="accordion-header faq-btn btn <?php echo $i !== 0 ? 'collapsed' : ''; ?>"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq<?php echo $i; ?>">
+                <?php echo $faq['q']; ?>
               </button>
             </h2>
-            <div id="collapse<?php echo $i; ?>" class="accordion-collapse collapse <?php echo $i===1 ? 'show':''; ?>" aria-labelledby="heading<?php echo $i; ?>" data-bs-parent="#faqAccordion">
-              <div class="accordion-body p-2"><?php echo $a; ?></div>
+
+            <div id="faq<?php echo $i; ?>"
+                 class="accordion-collapse collapse <?php echo $i === 0 ? 'show' : ''; ?>"
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <?php echo $faq['a']; ?>
+              </div>
             </div>
           </div>
-          <?php $i++; endforeach; ?>
+          <?php endforeach; ?>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
 
 <?php include("_subfooter.php") ?>
 

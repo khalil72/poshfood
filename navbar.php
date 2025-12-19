@@ -36,12 +36,12 @@ $trans = include $langFile;
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage=='#how-it-works') ? 'active' : ''; ?>" href="#how-it-works">
+                    <a class="nav-link <?php echo ($currentPage=='how-it-works.php') ? 'active' : ''; ?>" href="how-it-works.php">
                         <?php echo $trans['how_it_works']; ?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage=='#contact') ? 'active' : ''; ?>" href="#contact">
+                    <a class="nav-link <?php echo ($currentPage=='contact.php') ? 'active' : ''; ?>" href="contact.php">
                         <?php echo $trans['contact']; ?>
                     </a>
                 </li>

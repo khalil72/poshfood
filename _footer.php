@@ -1,14 +1,13 @@
-    <footer class="ftco-footer ftco-section footer-modern">
+   <footer class="ftco-footer ftco-section footer-modern">
   <div class="container">
     <div class="row mb-5">
 
       <!-- About -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2">About Us</h2>
+          <h2 class="ftco-heading-2"><?php echo $trans['about_us']; ?></h2>
           <p class="footer-text">
-            We deliver chef-prepared, healthy meals made with fresh ingredients.
-            Quality, taste, and nutrition — delivered to your door.
+            <?php echo $trans['about_desc']; ?>
           </p>
 
           <ul class="ftco-footer-social list-unstyled d-flex gap-3 mt-4">
@@ -22,12 +21,12 @@
       <!-- Services -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2">Our Services</h2>
+          <h2 class="ftco-heading-2"><?php echo $trans['our_services']; ?></h2>
           <ul class="list-unstyled footer-links">
-            <li><a href="#">Freshly Cooked Meals</a></li>
-            <li><a href="#">Weekly Delivery</a></li>
-            <li><a href="#">Healthy Nutrition</a></li>
-            <li><a href="#">Custom Meal Plans</a></li>
+            <li><?php echo $trans['service_1']; ?></li>
+            <li><?php echo $trans['service_2']; ?></li>
+            <li><?php echo $trans['service_3']; ?></li>
+            <li><?php echo $trans['service_4']; ?></li>
           </ul>
         </div>
       </div>
@@ -35,11 +34,11 @@
       <!-- Contact -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2">Have Questions?</h2>
+          <h2 class="ftco-heading-2"><?php echo $trans['have_questions']; ?></h2>
           <ul class="list-unstyled footer-contact">
             <li>
               <span class="icon icon-map-marker"></span>
-              <span>Karachi, Pakistan</span>
+              <span><?php echo $trans['location']; ?></span>
             </li>
             <li>
               <span class="icon icon-phone"></span>
@@ -60,12 +59,13 @@
       <div class="col-md-12 text-center footer-bottom">
         <p>
           © <script>document.write(new Date().getFullYear());</script>
-          <strong>Calibite</strong>. All Rights Reserved.
+          <strong>Calibite</strong>. <?php echo $trans['rights']; ?>
         </p>
       </div>
     </div>
   </div>
 </footer>
+
 
   
 
