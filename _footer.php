@@ -74,7 +74,41 @@
 
 
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', // default language
+    includedLanguages: 'en,es,ca',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const interval = setInterval(() => {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = 'en'; // default English
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      clearInterval(interval);
+    }
+  }, 300);
+});
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+
+
+
+
+<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -96,11 +130,11 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script>
+    <!-- <script>
 // Language switcher
 document.getElementById('languageSwitcher').addEventListener('change', function() {
     window.location.href = "?lang=" + this.value;
 });
-</script>
+</script> -->
   </body>
 </html>

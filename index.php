@@ -12,14 +12,14 @@ $langFile = "lang/$lang.php";
 if (!file_exists($langFile)) { $langFile = "lang/en.php"; }
 $trans = include $langFile;
 
-// -------------------- Helper: Translate Product Text via Google API --------------------
-function translateText($text, $target = 'en') {
-    $text = urlencode($text);
-    $url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$target&dt=t&q=$text";
-    $response = file_get_contents($url);
-    $result = json_decode($response, true);
-    return $result[0][0][0] ?? $text;
-}
+// // -------------------- Helper: Translate Product Text via Google API --------------------
+// function translateText($text, $target = 'en') {
+//     $text = urlencode($text);
+//     $url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$target&dt=t&q=$text";
+//     $response = file_get_contents($url);
+//     $result = json_decode($response, true);
+//     return $result[0][0][0] ?? $text;
+// }
 
 
 // Get all categories
@@ -56,7 +56,8 @@ foreach ($allProducts as $product) {
 
 define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158')); 
 ?>
-<div id="google_translate_element" style="display:none;"></div>
+
+
 
 <section class="home-slider owl-carousel img">
     <div class="slider-item">
@@ -154,6 +155,8 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
 <!-- Products / Menu -->
 <section class="ftco-menu py-5 " id="menu">
   <div class="container">
+
+
 
     <!-- Section Heading -->
     <div class="row justify-content-center mb-5">
@@ -366,6 +369,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => { toast.classList.remove('show'); setTimeout(()=>document.body.removeChild(toast),300); }, 3000);
   }
 });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const lang = localStorage.getItem("siteLang");
+  if (lang) changeLang(lang);
+});
+
+function changeLang(lang) {
+  localStorage.setItem("siteLang", lang);
+  const select = document.querySelector(".goog-te-combo");
+  if (select) {
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
 </script>
 
 

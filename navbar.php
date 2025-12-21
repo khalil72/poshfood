@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Get current page
-$currentPage = basename($_SERVER['PHP_SELF']); // e.g., "index.php"
 
-// Set language
+$currentPage = basename($_SERVER['PHP_SELF']); 
+
+
 $lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'en';
 $_SESSION['lang'] = $lang;
 
@@ -13,7 +13,23 @@ $langFile = "lang/$lang.php";
 if(!file_exists($langFile)) { $langFile = "lang/en.php"; }
 $trans = include $langFile;
 ?>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,ur,ar',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <body>
+  
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -45,13 +61,12 @@ $trans = include $langFile;
                         <?php echo $trans['contact']; ?>
                     </a>
                 </li>
-                <li>
-                    <select id="languageSwitcher" class="form-select form-select-sm p-1">
-                        <option value="en" <?php echo $lang=='en'?'selected':''; ?>>English</option>
-                        <option value="ur" <?php echo $lang=='ur'?'selected':''; ?>>Urdu</option>
-                        <option value="ar" <?php echo $lang=='ar'?'selected':''; ?>>Arabic</option>
-                    </select>
-                </li>
+      
+       <li class="nav-item ms-3">
+<div id="google_translate_element"></div>
+</li>
+
+                
             </ul>
         </div>
     </div>
