@@ -18,6 +18,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </a>
     <a href="product.php" class="<?php echo ($current_page == 'product.php') ? 'active' : ''; ?>">
         <i class="fa fa-box me-2 mr-1"></i> Products
+    <a href="contact_list.php" class="<?php echo ($current_page == 'contact_list.php') ? 'active' : ''; ?>">
+          <i class="fa fa-envelope me-2"></i>
+ Contact 
     </a>
     <a href="logout.php" class="text-danger">
         <i class="fa fa-sign-out-alt me-2"></i> Logout

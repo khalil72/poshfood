@@ -33,9 +33,7 @@ if (!empty($_GET['msg'])) {
           Add Category
  <i class="icon fa fa-angle-right"></i>
 </a>
-            <!-- <a href="add_category.php" class="btn btn-success btn-sm rounded">
-                <i class="fa fa-plus me-1"></i>
-            </a> -->
+           
         </div>
 
         <div class="card shadow-sm ">
