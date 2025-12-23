@@ -14,20 +14,20 @@ $time_remaining = sprintf(
 );
 ?>
 
-<section class="next-order-cutoff py-2 pb-2" style="background: #fff;">
+<section class="next-order-cutoff py-3 pb-3" style="background: #4A7059;">
     <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
         
         <div>
-            <h5 class="mb-0  ">Next Order :</h5>
+            <h5 class="mb-0 text-white ">Next Order:</h5>
         </div>
 
         <div>
-            <h6 class="mb-0 text-success" id="countdown"><?php echo $time_remaining; ?></h6>
+            <h6 class="mb-0 text-white mx-2" id="countdown"><?php echo $time_remaining; ?></h6>
         </div>
 
        
         <div class="mx-3">
-            <a href="order.php" class="btn btn-primary btn-sm">Order Now</a>
+            <a href="all_products.php" class="btn btn-dark text-white btn-sm rounded-sm">Order Now</a>
         </div>
     </div>
 </section>

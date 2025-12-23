@@ -1,76 +1,145 @@
-<?php 
+<?php
 include("_head.php");
 include("_topbar.php");
 include("navbar.php");
-$lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'en';
-$_SESSION['lang'] = $lang;
-
-$langFile = "lang/$lang.php";
-if (!file_exists($langFile)) { $langFile = "lang/en.php"; }
-$trans = include $langFile;
-
-
-function translateText($text, $target = 'en') {
-    $text = urlencode($text);
-    $url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$target&dt=t&q=$text";
-    $response = file_get_contents($url);
-    $result = json_decode($response, true);
-    return $result[0][0][0] ?? $text;
+include("includes/db.php");
+$alert = "";
+$alertType = "";
+if(isset($_GET['success'])) {
+    $alert = "✅ Your message has been sent successfully!";
+    $alertType = "success";
+} elseif(isset($_GET['error'])) {
+    $alert = "❌ Something went wrong. Please try again.";
+    $alertType = "danger";
 }
 
+// Handle POST submission
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $contact = mysqli_real_escape_string($conn,$_POST['contact']);
+    $type = mysqli_real_escape_string($conn,$_POST['type']);
+    $message = mysqli_real_escape_string($conn,$_POST['message']);
+
+    $sql = "INSERT INTO contacts (name,email,contact,type,message)
+            VALUES ('$name','$email','$contact','$type','$message')";
+    
+   if(mysqli_query($conn,$sql)){
+        $alert = "✅ Thanks for contacting us. We'll get back to you as soon as possible.!";
+        $alertType = "success";
+    } else {
+        $alert = "❌ Something went wrong. Please try again.";
+        $alertType = "danger";
+    }
+}
 ?>
 
-<section class="ftco-contact py-5 bg-light">
-  <div class="container text-center">
 
-    <!-- Heading -->
-    <h2 class="mb-3"><?php echo $trans['contact_us']; ?></h2>
-    <p class="mb-5 text-muted"><?php echo $trans['contact_subtitle']; ?></p>
+<section class="py-5 bg-white contact-section">
+  <div class="container">
+    <div class="row g-4">
 
-    <!-- Contact Info -->
-    <div class="row g-4 justify-content-center mb-5">
-      <div class="col-md-3">
-        <div class="contact-box p-4 rounded shadow-sm bg-white">
-          <div class="icon fs-2 mb-3">📞</div>
-          <h5><?php echo $trans['phone']; ?></h5>
-          <a href="https://wa.me/923036580158" target="_blank">
-            +92 303 6580158
-          </a>
+      <!-- LEFT SIDE -->
+      <div class="col-md-5 slide-up delay-1">
+        <div class="help-box h-100">
+          <h4 class="mb-3">Need Help?</h4>
+          <p class="text-muted mb-4">
+            Have a question about your order or want to know more about our meals?
+            Send us a message and we’ll get back to you as soon as possible.
+            We’re here to help you get the most out of Phosh Food.
+          </p>
+
+          <div class="contact-item">
+            <span class="icon">📞</span>
+            <div>
+              <h6 class="mb-1">Contact Number</h6>
+              <a href="https://wa.me/923036580158" target="_blank">+92 303 6580158</a>
+            </div>
+          </div>
+
+          <div class="contact-item mt-4">
+            <span class="icon">✉️</span>
+            <div>
+              <h6 class="mb-1">Email</h6>
+              <a href="mailto:info@phoshfood.com">info@phoshfood.com</a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="contact-box p-4 rounded shadow-sm bg-white">
-          <div class="icon fs-2 mb-3">✉️</div>
-          <h5><?php echo $trans['email']; ?></h5>
-        <a href="mailto:info@phoshfood.com">info@phoshfood.com</a>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="contact-box p-4 rounded shadow-sm bg-white">
-          <div class="icon fs-2 mb-3">📍</div>
-          <h5><?php echo $trans['address']; ?></h5>
-          <p><?php echo $trans['address_text']; ?></p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="map-container rounded shadow-sm overflow-hidden" style="height:400px;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-
+      <!-- RIGHT SIDE -->
+      <div class="col-md-7 slide-up delay-2">
+        <div class="form-box h-100 with-divider">
+          <h4 class="mb-4">Contact Form</h4>
+      <?php if($alert): ?>
+<div id="formAlert" class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show" role="alert">
+  <?php echo $alert; ?>
  
-    <a href="https://www.google.com/maps/dir/?api=1&destination=YOUR_LAT,YOUR_LNG" target="_blank" class="btn btn-primary mt-4">
-      <?php echo $trans['get_directions']; ?>
-    </a>
+</div>
 
+<script>
+  setTimeout(function(){
+    var alertEl = document.getElementById('formAlert');
+    if(alertEl){
+      var bsAlert = bootstrap.Alert.getOrCreateInstance(alertEl);
+      bsAlert.close();
+    }
+  }, 3000);
+</script>
+<?php endif; ?>
+
+   
+
+          <form action="" method="POST">
+            <div class="row g-3">
+
+              <div class="col-md-6 mb-3">
+                <input type="text" name="name" class="form-control"
+                       placeholder="Enter your name" required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <input type="email" name="email" class="form-control"
+                       placeholder="Enter your email" required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <input type="text" name="contact" class="form-control"
+                       placeholder="Enter your contact number" required>
+              </div>
+
+              <div class="col-md-6 mb-3 mt-3">
+                <select name="type" class="form-select custom-select" required>
+                  <option value="">Select Type</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+
+              <div class="col-md-12 mb-3 mt-3">
+                <textarea name="message" rows="3" class="form-control"
+                          placeholder="Write your message" required></textarea>
+              </div>
+
+              <div class="col-md-12 mt-2">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
+
+
+
 <?php include("_subfooter.php") ?>
 <?php include("_footer.php"); ?>
+
+<!-- AUTO OPEN MODAL -->
+

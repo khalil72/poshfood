@@ -113,7 +113,7 @@ $cats = mysqli_query($conn, "SELECT id, name FROM categories ORDER BY name ASC")
         <div class="col-md-6 mb-3">
           <label class="form-label fw-semibold">Price</label>
           <div class="input-group">
-            <span class="input-group-text">$</span>
+            <span class="input-group-text">€</span>
             <input type="number"
                    step="0.01"
                    name="price"
@@ -133,7 +133,7 @@ $cats = mysqli_query($conn, "SELECT id, name FROM categories ORDER BY name ASC")
                  accept="image/*"
                  required
                  >
-          <small class="text-muted">PNG, JPG, JPEG allowed</small>
+          
         </div>
 <div class="col-12">
                 <label class="form-label fw-semibold">
@@ -152,10 +152,10 @@ $cats = mysqli_query($conn, "SELECT id, name FROM categories ORDER BY name ASC")
                 </small>
               </div>
         <!-- Buttons -->
-        <div class="col-12 d-flex justify-content-end gap-2 mt-4">
+        <div class="col-12 d-flex justify-content-start gap-2 mt-4">
         
-          <button type="submit" class="btn btn-primary px-4">
-            <i class="fa fa-save me-2 mr-2"></i> Save Product
+          <button type="submit" class="btn btn-sm btn-dark px-4 py-2 text-white ">
+            Save Product
           </button>
         </div>
 

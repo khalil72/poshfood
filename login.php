@@ -1,9 +1,11 @@
 <?php
-include("_head.php");
-include("navbar.php");
+// Start session and output buffering at the very top
+ob_start();
+session_start();
+
 include("includes/db.php");
 
-// session_start(); 
+// If admin already logged in, redirect to dashboard
 if (isset($_SESSION['admin_id'])) {
     header("Location: dashboard.php");
     exit;
@@ -12,6 +14,7 @@ if (isset($_SESSION['admin_id'])) {
 $error = "";
 $email = "";
 
+// Handle login form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = trim($_POST['email'] ?? '');
@@ -20,8 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || empty($password)) {
         $error = "Email and Password are required";
     } else {
-
-      
+        // Prepare statement to prevent SQL injection
         $stmt = $conn->prepare("SELECT id, password FROM admin WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -30,11 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows === 1) {
             $admin = $result->fetch_assoc();
 
+            // Verify password
             if (password_verify($password, $admin['password'])) {
-                // Credentials valid, start session
                 $_SESSION['admin_id'] = $admin['id'];
                 $_SESSION['admin_email'] = $email;
-                header("Location:dashboard.php");
+
+                header("Location: dashboard.php");
                 exit;
             } else {
                 $error = "Email or Password is incorrect";
@@ -45,7 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+// Include head and navbar AFTER processing login logic
+include("_head.php");
+include("navbar.php");
 ?>
+
 
 <section class="ftco-section bg-light d-flex align-items-center" style="min-height: 100vh;">
   <div class="container">

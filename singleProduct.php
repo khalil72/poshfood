@@ -51,7 +51,7 @@ $relatedProducts = mysqli_fetch_all($relatedResult, MYSQLI_ASSOC);
 
       
         <div class="col-md-6">
-            <h2 class="fw-bold mb-3"><?php echo htmlspecialchars($product['name']); ?></h2>
+            <h2 class="fw-bold  mb-3"><?php echo htmlspecialchars($product['name']); ?></h2>
             <p class="text-muted mb-3"><strong>Category:</strong> <?php echo htmlspecialchars($product['category_name']); ?></p>
             <h4 class="text-primary mb-3">Rs <?php echo number_format($product['price']); ?></h4>
             <p>
@@ -67,13 +67,16 @@ $relatedProducts = mysqli_fetch_all($relatedResult, MYSQLI_ASSOC);
             </p>
             
            <a href="<?php echo $waLink; ?>" target="_blank" 
-                       class="btn btn-whatsapp  rounded-pill order-btn"
+                       class="btn btn-dark text-white  rounded-pill order-btn"
                        data-product-name="<?php echo htmlspecialchars($product['name']); ?>">
-                      <i class="fab fa-whatsapp me-2"></i> Order Now
+                      Order Now
                     </a>
         </div>
     </div>
+</div>
 
+
+<!-- <section class="mb-5 mt-5" style="background-color: #F2F6ED;">
     <?php if ($relatedProducts): ?>
     <div class="mt-5">
         <h3 class="mb-4">Related Products</h3>
@@ -86,23 +89,35 @@ $relatedProducts = mysqli_fetch_all($relatedResult, MYSQLI_ASSOC);
                 $msgRel .= "*Link:* " . "https://limo.idealdollarshop.com/product.php?id={$rel['id']}";
                 $waLinkRel = "https://wa.me/" . WHATSAPP_NUMBER . "?text=" . urlencode($msgRel);
             ?>
-            <div class="col-sm-6 col-md-4 product-item">
-                <div class="card product-card border-0 shadow-sm h-100">
-                    <a href="product.php?id=<?php echo $rel['id']; ?>" class="overflow-hidden">
-                        <img src="<?php echo !empty($rel['image']) ? 'uploads/products/' . htmlspecialchars($rel['image']) : 'images/default-product.jpg'; ?>" 
-                             class="card-img-top product-img img-fluid" alt="<?php echo htmlspecialchars($rel['name']); ?>">
-                    </a>
-                    <div class="card-body text-center p-3">
-                        <h6 class="fw-bold mb-2"><?php echo htmlspecialchars($rel['name']); ?></h6>
-                        <div class="d-flex gap-2 justify-content-center">
-                            <a href="product.php?id=<?php echo $rel['id']; ?>" class="btn btn-outline-dark btn-sm flex-grow-1">
-                                <i class="fa fa-eye me-1"></i> View
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="card mini-product-card border-0 h-100 position-relative overflow-hidden shadow-sm"
+                     data-aos="fade-up" data-aos-duration="600">
+
+                   
+                    <div class="position-relative overflow-hidden rounded-top">
+                        <div class="img-container">
+                            <img src="<?php echo !empty($product['image']) ? 'uploads/products/' . htmlspecialchars($product['image']) : 'images/default-product.jpg'; ?>" 
+                                 class="card-img-top img-fluid product-img" 
+                                 alt="<?php echo htmlspecialchars($product['name']); ?>">
+                        </div>
+
+                       
+                        <div class="overlay d-flex flex-column justify-content-between">
+                            <a href="singleProduct.php?id=<?php echo $product['id']; ?>" 
+                               class="search-icon btn btn-light btn-sm rounded-circle text-dark">
+                                <i class="fas fa-search"></i>
                             </a>
-                            <a href="<?php echo $waLinkRel; ?>" target="_blank" 
-                               class="btn btn-success btn-sm flex-grow-1">
-                               <i class="fab fa-whatsapp me-1"></i> Order
+                            <a href="<?php echo $waLink; ?>" target="_blank" 
+                               class="btn btn-success btn-sm text-white order-btn w-100">
+                               Order Now
                             </a>
                         </div>
+                    </div>
+
+                  
+                    <div class="card-body text-start p-2">
+                        <p class="mb-1 text-truncate fw-semibold"><?php echo htmlspecialchars($product['name']); ?></p>
+                        <p class="fw-bold mb-0 text-dark">From € <?php echo number_format($product['price'],2); ?></p>
                     </div>
                 </div>
             </div>
@@ -110,8 +125,8 @@ $relatedProducts = mysqli_fetch_all($relatedResult, MYSQLI_ASSOC);
         </div>
     </div>
     <?php endif; ?>
-</div>
+            </section> -->
 
 
-
+<?php include("_subfooter.php") ?>
 <?php include("_footer.php"); ?>

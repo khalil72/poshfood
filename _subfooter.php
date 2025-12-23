@@ -1,42 +1,48 @@
-<section class="sub-footer-contact bg-primary">
+<section class="sub-footer-contact banner-bg py-5" data-aos="fade-up" data-aos-duration="800">
   <div class="container">
-    <div class="row g-4 text-center">
+    <div class="row g-4 justify-content-center text-center text-md-start">
 
       <!-- Email -->
-      <div class="col-md-4">
-        <div class="contact-box">
-          <div class="icon-circle">
-            <i class="icon-envelope"></i>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="contact-box d-flex align-items-center justify-content-center justify-content-md-start gap-3 p-3 shadow-sm rounded">
+          <div class="icon-circle bg-success text-white d-flex align-items-center justify-content-center">
+            <i class="fa fa-envelope fa-lg"></i>
           </div>
-          <h6><?php echo $trans['send_email']; ?></h6>
-          <a href="mailto:info@phoshfood.com">info@phoshfood.com</a>
+          <div class="contact-text">
+            <h6 class="mb-1">Send Email</h6>
+            <a href="mailto:info@phoshfood.com" class="text-decoration-none">info@phoshfood.com</a>
+          </div>
         </div>
       </div>
 
       <!-- WhatsApp -->
-      <div class="col-md-4">
-        <div class="contact-box">
-          <div class="icon-circle">
-            <i class="icon-whatsapp"></i>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="contact-box d-flex align-items-center justify-content-center justify-content-md-start gap-3 p-3 shadow-sm rounded">
+          <div class="icon-circle bg-success text-white d-flex align-items-center justify-content-center">
+            <i class="fab fa-whatsapp fa-lg"></i>
           </div>
-          <h6><?php echo $trans['whatsapp']; ?></h6>
-          <a href="https://wa.me/923036580158" target="_blank">
-            +92 303 6580158
-          </a>
+          <div class="contact-text">
+            <h6 class="mb-1">WhatsApp</h6>
+            <a href="https://wa.me/923036580158" target="_blank" class="text-decoration-none">+92 303 6580158</a>
+          </div>
         </div>
       </div>
 
       <!-- Service Hours -->
-      <div class="col-md-4">
-        <div class="contact-box">
-          <div class="icon-circle">
-            <i class="icon-clock-o"></i>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="contact-box d-flex align-items-center justify-content-center justify-content-md-start gap-3 p-3 shadow-sm rounded">
+          <div class="icon-circle bg-success text-white d-flex align-items-center justify-content-center">
+            <i class="fa fa-clock fa-lg"></i>
           </div>
-          <h6><?php echo $trans['service_hours']; ?></h6>
-          <p><?php echo $trans['service_time']; ?></p>
+          <div class="contact-text">
+            <h6 class="mb-1">Customer Service Hours</h6>
+            <p class="mb-0">Mon – Sun, 9:00 – 18:00</p>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
+

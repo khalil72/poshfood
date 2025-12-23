@@ -12,14 +12,6 @@ $langFile = "lang/$lang.php";
 if (!file_exists($langFile)) { $langFile = "lang/en.php"; }
 $trans = include $langFile;
 
-// // -------------------- Helper: Translate Product Text via Google API --------------------
-// function translateText($text, $target = 'en') {
-//     $text = urlencode($text);
-//     $url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$target&dt=t&q=$text";
-//     $response = file_get_contents($url);
-//     $result = json_decode($response, true);
-//     return $result[0][0][0] ?? $text;
-// }
 
 
 // Get all categories
@@ -78,28 +70,53 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
 </section>
 
 <!-- About Section -->
-<section class="ftco-about d-flex align-items-center min-vh-100 mt-5 mb-5">
+<section class="about-section d-flex align-items-center mt-0 mt-md-5 " data-aos="fade-up" data-aos-duration="800"
+style="background-image: url('images/transparent-image-6.png');"
+>
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-start">
 
-      <!-- Image Column -->
-      <div class="col-md-6">
-         <img src="images/mockup1b.png" alt="Healthy Meals" class="about-img img-fluid"/>
-      </div>
+      
+   <div class="col-md-6 d-flex justify-content-center">
+  <div class="about-image-overlap">
+    <img src="images/rotate-image-2.jpg"  class="img img-front" alt="Healthy Meal">
+    <img src="images/rotate-image-1.jpg" class="img img-back" alt="Meal Prep">
+  </div>
+</div>
 
-      <!-- Content Column -->
+
+     
       <div class="col-md-6 text-left">
-        <div class="heading-section">
-          <h2 class="mb-4">
-                <?php echo $trans['how_it_works_text']; ?>
+        <div class="sec-title mb-4" style="background-image: url('images/line-two.png');">
+          <h2 class="text-success mb-0 ">
+             <i>About Us</i>
           </h2>
-        </div>
-         <p class="mb-4">
-  <?php echo $trans['how_it_works_desc']; ?>
-</p>
+          <h1 class="mb-0">
+           WE ARE TASTY
+          </h1>
+        </div >
 
-<a href="all_products.php" class="btn btn-primary py-3 px-4">
-  <?php echo $trans['see_menu']; ?>
+        <div class="mb-3">
+            <p>
+  Fresh, chef-made meals crafted to support
+  your personal health goals. Each dish is made
+  with locally sourced ingredients,
+  ensuring maximum flavor and nutrition.
+</p>
+<p>
+  Our healthy meal prep is delivered weekly
+  and designed for weight loss, muscle gain,
+  or simply eating better. With flexible plans
+  and customizable options, healthy eating has never been easier.
+</p>
+        </div>
+ 
+
+
+
+<a href="all_products.php" class="theme-btn uppercase" data-aos="fade-right" data-aos-duration="800">
+  See The Menu
+  <i class="icon fa fa-angle-right"></i>
 </a>
 
         
@@ -109,22 +126,32 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
   </div>
 </section>
 
+
 <!-- How It Works -->
-<section class="ftco-section bg-primary mt-5 mb-5">
+<section class="ftco-section banner-bg " data-aos="fade-up" data-aos-duration="800">
   <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-8 text-center">
-        <h2 class="mb-3 text-white"><?php echo $trans['how_it_works']; ?></h2>
-        <p class="text-white-50"><?php echo $trans['how_it_works_text']; ?></p>
-      </div>
+    <div class="row justify-content-center mb-5 ">
+    <div class="col-md-8 text-center">
+  <span class="text-white">Getting healthy meals is simple, fast, and hassle-free.</span>
+  <h2 class="text-white font-bold mb-0">How It Works</h2>
+  <a href="/how-it-works.php" class="animated-link underline" data-aos="fade-up" data-aos-duration="800">
+    Learn More <i class="icon fa fa-angle-right mx-2"></i>
+  </a>
+</div>
+
+
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-right" data-aos-duration="800">
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">01</span>
-          <div class="step-icon">🥗</div>
-         <h4><?php echo $trans['step_pick']; ?></h4>
-<p><?php echo $trans['step_pick_desc']; ?></p>
+        
+            <img src="icons/checklist.avif" class="img mb-3"/>
+        
+         <h4 class="mb-0 text-success ">Pick Your Meals</h4>
+<p>
+  Choose from our weekly chef-designed menu tailored to your goals
+</p>
 
 
 
@@ -134,31 +161,88 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">02</span>
-          <div class="step-icon">👨‍🍳</div>
-    <h4><?php echo $trans['step_cook']; ?></h4>
-<p><?php echo $trans['step_cook_desc']; ?></p>
+          
+              <img src="icons/lunch-box.avif" class="mb-3"/>
+          
+    <h4 class="mb-0 text-success ">
+      Fresh Cooking
+    </h4>
+<p>
+  Our chefs cook your meals fresh using premium ingredients.
+</p>
 
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="work-step text-center">
           <span class="step-number">03</span>
-          <div class="step-icon">🚚</div>
-         <h4><?php echo $trans['step_delivery']; ?></h4>
-<p><?php echo $trans['step_delivery_desc']; ?></p>
+         
+             <img src="icons/delivery-man.avif" class="img mb-3" />
+         
+         <h4 class="mb-0 text-success ">Doorstep Delivery</h4>
+<p>
+  Receive fresh meals weekly, ready to heat and enjoy
+</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Products / Menu -->
-<section class="ftco-menu py-5 " id="menu">
+<section class="ftco-menu py-5" id="menu" data-aos="fade-up" data-aos-duration="800">
   <div class="container">
 
+    <!-- Section Header -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8 text-center animate-fade-in">
+        <h4 class="text-success mb-0">
+          <i>Something For Every Taste And Goal</i>
+        </h4>
+        <p class="text-muted">
+          Whether you’re building muscle, trimming down, or just want tasty meals without the hassle, every dish is fresh, packed with care, and ready to heat in minutes.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center" data-aos="fade-right" data-aos-duration="800">
+      <?php
+      $sql = "SELECT id, name, image FROM categories ORDER BY id DESC LIMIT 6";
+      $result = mysqli_query($conn, $sql);
+      if ($result && mysqli_num_rows($result) > 0):
+        while ($category = mysqli_fetch_assoc($result)):
+      ?>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <a href="category_products.php?id=<?php echo $category['id']; ?>" class="text-decoration-none">
+          <div class="card product-card border-0  shadow-sm h-100 text-center border-0">
+            <div class="overflow-hidden rounded-top">
+              <img src="<?php 
+                echo !empty($category['image']) ? 'uploads/categories/' . $category['image'] : 'images/default-category.jpg';
+              ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars($category['name']); ?>" style="height:150px; object-fit:cover;">
+            </div>
+            <div class="card-body p-2">
+              <h6 class="fw-bold mb-0 text-dark"><?php echo htmlspecialchars($category['name']); ?></h6>
+            </div>
+          </div>
+        </a>
+      </div>
+      <?php
+        endwhile;
+      else:
+      ?>
+      <div class="col-12 text-center">
+        <p class="text-muted">No categories found.</p>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
 
 
-    <!-- Section Heading -->
+
+<!-- Products / Menu -->
+<!-- <section class="ftco-menu py-5 " id="menu" data-aos="fade-up" data-aos-duration="800">
+  <div class="container">
+    
     <div class="row justify-content-center mb-5">
       <div class="col-md-8 text-center animate-fade-in">
         <h2 class="fw-bold mb-3"><?php echo $trans['explore_menu']; ?></h2>
@@ -173,13 +257,13 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
         <div class="rounded-4 shadow-lg h-100 overflow-hidden position-relative hover-zoom"
              style="background:url('images/about.jpg') center/cover; min-height:450px;">
              <div class="image-overlay-text">
-                 <!-- <h4 class="text-white fw-bold">Fresh & Healthy</h4> -->
+              
              </div>
         </div>
       </div>
 
       <div class="col-lg-8">
-        <!-- Tabs -->
+       
         <div class="text-center mb-5">
           <div class="nav nav-pills justify-content-center custom-pills" role="tablist">
             <a class="nav-link active" data-bs-toggle="pill" href="#all-products"><i class="fa fa-border-all me-1"></i> All</a>
@@ -192,7 +276,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
         </div>
 
         <div class="tab-content">
-          <!-- All Products -->
+       
           <div class="tab-pane fade show active" id="all-products">
             <div class="row g-4 justify-content-center">
               <?php foreach (array_slice($allProducts, 0, 3) as $product): 
@@ -209,7 +293,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
                     <img src="<?php echo !empty($product['image']) ? 'uploads/products/' . htmlspecialchars($product['image']) : 'images/default-product.jpg'; ?>" 
                          class="card-img-top product-img" 
                          alt="<?php echo htmlspecialchars($product['name']); ?>">
-                    <div class="price-tag">Rs <?php echo number_format($product['price']); ?></div>
+                    <div class="price-tag">€ <?php echo number_format($product['price']); ?></div>
                   </div>
                   <div class="card-body text-center p-3">
                     <h6 class="fw-bold mb-2"><?php echo htmlspecialchars($product['name']); ?></h6>
@@ -230,7 +314,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
             </div>
           </div>
 
-          <!-- Category Products -->
+         
           <?php foreach ($categories as $category): ?>
           <div class="tab-pane fade" id="cat-<?php echo $category['id']; ?>">
             <div class="row g-4 justify-content-center">
@@ -255,7 +339,7 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
                  alt="<?php echo htmlspecialchars($product['name']); ?>" 
                  style="transition: transform 0.3s ease;">
         </a>
-                    <div class="price-tag">Rs <?php echo number_format($product['price']); ?></div>
+                    <div class="price-tag">€ <?php echo number_format($product['price']); ?></div>
                   </div>
                   <div class="card-body text-center p-3">
                     <h6 class="fw-bold mb-2"><?php echo htmlspecialchars($product['name']); ?></h6>
@@ -280,30 +364,37 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- /faq section -->
-<section class="faq-section py-5 bg-light">
+<section class="faq-section py-5 bg-light" data-aos="fade-up" data-aos-duration="800">
   <div class="container ftco-animate">
-    <div class="row">
+    <div class="row justify-content-center align-items-center">
       
       <!-- Left Content -->
-      <div class="col-md-4 mb-4 text-center text-md-start">
+      <div class="col-md-4 mb-4 text-center text-md-center justify-items-center">
         <h2 class="fw-bold mb-3 faq-heading">
-          <?php echo $trans['faq_heading']; ?><br>
-          <span class="text-success"><?php echo $trans['faq_subheading']; ?></span>
+        Have Questions? 
+        <br>
+          <span class="text-success">
+            We Have Answers
+          </span>
         </h2>
+ <p>
+  Everything you need to know about ordering, delivery, and keeping your meals fresh. Quick answers to help you get started with confidence.
 
-        <a href="#how-it-works" class="btn btn-dark rounded mt-2">
-          <?php echo $trans['faq_button']; ?>
-        </a>
+ </p>
+       <a href="how-it-work.php" class="theme-btn uppercase" data-aos="fade-right" data-aos-duration="800">
+How its work
+  <i class="icon fa fa-angle-right"></i>
+</a>
       </div>
 
       <div class="col-md-8">
         <div class="accordion" id="faqAccordion">
 
           <?php foreach ($trans['faqs'] as $i => $faq): ?>
-          <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+          <div class="accordion-item border-0 mb-3  rounded">
             <h2 class="accordion-header">
               <button class="accordion-header faq-btn btn <?php echo $i !== 0 ? 'collapsed' : ''; ?>"
                       type="button"
@@ -332,10 +423,21 @@ define('WHATSAPP_NUMBER', preg_replace('/\D/', '', '+92 303 6580158'));
 
 
 
+
+
+
+
+
+
+
+
 <?php include("_subfooter.php") ?>
 
 <?php include("_footer.php"); ?>
-<!-- Scripts -->
+
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Product hover animation

@@ -46,9 +46,11 @@ $res = mysqli_query($conn, $sql);
         <div class="card-body">
              <div class="d-flex justify-content-between align-items-center mb-3">
         <h5 class="mb-0">Product List</h5>
-        <a href="add_product.php" class="btn btn-success btn-sm rounded">
-          <i class="fa fa-plus me-1"></i> Add Product
-        </a>
+              <a href="add_product.php" class="theme-btn uppercase" >
+          Add Product
+ <i class="icon fa fa-angle-right"></i>
+</a>
+        
       </div>
           <table class="table table-bordered table-hover align-middle">
             <thead class="table-light">
@@ -79,14 +81,14 @@ $res = mysqli_query($conn, $sql);
                 <td><?php echo htmlspecialchars($row['category_name']); ?></td>
                 <td><?php echo number_format($row['price'], 2); ?></td>
                 <td class="text-center">
-                  <a href="view_product.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-secondary">
+                  <a href="view_product.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-secondary text-white">
                     <i class="fa fa-eye"></i>
                   </a>
-                  <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-info">
+                  <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-info text-white">
                     <i class="fa fa-pen-to-square"></i>
                   </a>
                   <a href="delete_product.php?id=<?php echo $row['id']; ?>"
-                     class="btn btn-sm btn-danger"
+                     class="btn btn-sm btn-danger text-white"
                      onclick="return confirm('Delete this product?');">
                     <i class="fa fa-trash"></i>
                   </a>

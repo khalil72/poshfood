@@ -1,85 +1,64 @@
-   <footer class="ftco-footer ftco-section footer-modern">
+ <footer class="ftco-footer footer-modern bg-light pt-5">
   <div class="container">
-    <div class="row mb-5">
+    <div class="row mb-5 align-items-start">
 
-      <!-- About -->
+      <!-- Logo + About -->
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2"><?php echo $trans['about_us']; ?></h2>
+        <div class="footer-brand">
+          <img src="images/Calibite_logo.png" alt="Calibite Logo" class="footer-logo mb-3">
           <p class="footer-text">
-            <?php echo $trans['about_desc']; ?>
+            Phosh Food delivers fresh, macro-balanced meals across Spain. 
+            Chef-prepared, nutritionally designed, and ready to heat. 
+            Healthy eating made simple.
           </p>
-
-          <ul class="ftco-footer-social list-unstyled d-flex gap-3 mt-4">
-            <li><a href="#"><span class="icon-twitter"></span></a></li>
-            <li><a href="#"><span class="icon-facebook"></span></a></li>
-            <li><a href="#"><span class="icon-instagram"></span></a></li>
-          </ul>
         </div>
       </div>
 
       <!-- Services -->
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2"><?php echo $trans['our_services']; ?></h2>
-          <ul class="list-unstyled footer-links">
-            <li><?php echo $trans['service_1']; ?></li>
-            <li><?php echo $trans['service_2']; ?></li>
-            <li><?php echo $trans['service_3']; ?></li>
-            <li><?php echo $trans['service_4']; ?></li>
-          </ul>
-        </div>
+        <h5 class="footer-title">Our Services</h5>
+        <ul class="footer-links">
+          <li>Freshly Cooked Meals</li>
+          <li>Weekly Delivery</li>
+          <li>Healthy Nutrition</li>
+          <li>Custom Meal Plans</li>
+        </ul>
       </div>
 
       <!-- Contact -->
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="ftco-footer-widget">
-          <h2 class="ftco-heading-2"><?php echo $trans['have_questions']; ?></h2>
-          <ul class="list-unstyled footer-contact">
-            <li>
-              <span class="icon icon-map-marker"></span>
-              <span><?php echo $trans['location']; ?></span>
-            </li>
-            <li>
-              <span class="icon icon-phone"></span>
-              <span>+92 303 6580158</span>
-            </li>
-            <li>
-              <span class="icon icon-envelope"></span>
-              <span>info@calibite.com</span>
-            </li>
-          </ul>
-        </div>
+        <h5 class="footer-title">Contact Us</h5>
+        <ul class="footer-contact">
+          <li><i class="fa fa-map-marker"></i> Lahore, Pakistan</li>
+          <li><i class="fa fa-phone"></i> +92 303 6580158</li>
+          <li><i class="fa fa-envelope"></i> info@poshfood.com</li>
+        </ul>
       </div>
 
     </div>
 
     <!-- Bottom -->
-    <div class="row">
-      <div class="col-md-12 text-center footer-bottom">
-        <p>
+    <div class="row border-top pt-3">
+      <div class="col-md-12 text-center">
+        <p class="mb-0">
           © <script>document.write(new Date().getFullYear());</script>
-          <strong>Calibite</strong>. <?php echo $trans['rights']; ?>
+          <strong>Calibite</strong>. All Rights Reserved.
         </p>
       </div>
     </div>
   </div>
 </footer>
 
-
-  
-
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
 
-<div id="google_translate_element"></div>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
-    pageLanguage: 'en', // default language
+    pageLanguage: 'en', 
     includedLanguages: 'en,es,ca',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
     autoDisplay: false
@@ -101,6 +80,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slideEls = document.querySelectorAll('.slide-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  slideEls.forEach(el => observer.observe(el));
+});
+</script>
 
 
 
