@@ -237,7 +237,10 @@ style="background-image: url('images/transparent-image-6.png');"
   </div>
 </section>
 
+<!-- Certifications Section -->
 
+
+ <!-- logo section -->
 
 <!-- Products / Menu -->
 <!-- <section class="ftco-menu py-5 " id="menu" data-aos="fade-up" data-aos-duration="800">
@@ -427,6 +430,43 @@ How its work
 
 
 
+<section class="ftco-menu py-5" id="certifications" data-aos="fade-up" data-aos-duration="800">
+  <div class="container">
+    <!-- Heading -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-8 animate-fade-in">
+        <h4 class="text-success mb-2"><i>Important Certification</i></h4>
+        <p class="text-muted mb-0">
+          Whether you’re building muscle, trimming down, or just want tasty meals without the hassle, every dish is fresh, packed with care, and ready to heat in minutes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="row">
+      <div class="col-12">
+        <div class="certification-slider">
+          <?php
+          $certifications = [
+              "images/logo1.jpg",
+              "images/logo2.jpg",
+              "images/logo3.jpg",
+              "images/logo4.jpg",
+              "images/logo6.jpg",
+              "images/logo7.jpg",
+          ];
+          foreach ($certifications as $cert): ?>
+            <div class="cert-slide">
+              <img src="<?php echo $cert; ?>" alt="Certification" class="img-fluid rounded shadow-sm" style="max-height:80px; cursor:pointer;">
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
@@ -437,6 +477,27 @@ How its work
 
 
 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.certification-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,        
+    dots: false,
+    centerMode: true,
+    centerPadding: '20px',
+    focusOnSelect: true,  
+    responsive: [
+      { breakpoint: 1200, settings: { slidesToShow: 3, centerPadding: '15px' } },
+      { breakpoint: 768,  settings: { slidesToShow: 1, centerPadding: '0px' } }
+    ]
+  });
+});
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

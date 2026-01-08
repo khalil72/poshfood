@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             <span class="icon">📞</span>
             <div>
               <h6 class="mb-1">Contact Number</h6>
-              <a href="https://wa.me/923036580158" target="_blank">+92 303 6580158</a>
+              <a href="https://wa.me/+34 611810946 " target="_blank">+34 611810946 </a>
             </div>
           </div>
 
@@ -61,7 +61,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             <span class="icon">✉️</span>
             <div>
               <h6 class="mb-1">Email</h6>
-              <a href="mailto:info@phoshfood.com">info@phoshfood.com</a>
+              <a href="mailto:info@phoshfood.com">
+                contactus@a2zic.com 
+              </a>
             </div>
           </div>
         </div>
@@ -87,9 +89,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
   }, 3000);
 </script>
 <?php endif; ?>
-
-   
-
           <form action="" method="POST">
             <div class="row g-3">
 

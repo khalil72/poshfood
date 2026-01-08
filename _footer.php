@@ -12,6 +12,24 @@
             Healthy eating made simple.
           </p>
         </div>
+           <div class="footer-social mt-4">
+  <a href="https://www.instagram.com/gi.calibite" target="_blank" class="social-icon">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="#" target="_blank" class="social-icon">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="#" target="_blank" class="social-icon">
+    <i class="fab fa-tiktok"></i>
+  </a>
+
+  <a href="https://wa.me/34611810946" target="_blank" class="social-icon">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
       </div>
 
       <!-- Services -->
@@ -29,15 +47,16 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <h5 class="footer-title">Contact Us</h5>
         <ul class="footer-contact">
-          <li><i class="fa fa-map-marker"></i> Lahore, Pakistan</li>
-          <li><i class="fa fa-phone"></i> +92 303 6580158</li>
-          <li><i class="fa fa-envelope"></i> info@poshfood.com</li>
+          <li><i class="fa fa-map-marker"></i> Carrer Migdia 30, 5-4 17002, Girona Spain</li>
+</li>
+          <li><i class="fa fa-phone"></i> +34 611810946</li>
+          <li><i class="fa fa-envelope"></i> contactus@a2zic.com </li>
         </ul>
       </div>
 
     </div>
 
-    <!-- Bottom -->
+   
     <div class="row border-top pt-3">
       <div class="col-md-12 text-center">
         <p class="mb-0">

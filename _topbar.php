@@ -22,13 +22,13 @@ $time_remaining = sprintf(
         </div>
 
         <div>
-            <h6 class="mb-0 text-white mx-2" id="countdown"><?php echo $time_remaining; ?></h6>
+            <h5 class="mb-0  text-white mx-2" id="countdown"><?php echo $time_remaining; ?></h5>
         </div>
 
-       
+<!--        
         <div class="mx-3">
             <a href="all_products.php" class="btn btn-dark text-white btn-sm rounded-sm">Order Now</a>
-        </div>
+        </div> -->
     </div>
 </section>
 

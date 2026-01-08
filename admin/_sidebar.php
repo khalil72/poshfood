@@ -6,7 +6,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <div class="col-md-3 col-lg-2 d-md-block sidebar collapse" id="sidebarMenu">
    
     <a class="navbar-brand d-block text-center mb-3" href="index.php">
-       <img src="images/Calibite_logo.png" alt="Calibite Logo" height="40">
+       <img src="images/Calibite_logo.png" alt="Calibite Logo" height="50" 
+       class="image-fluid"
+       >
     </a>
 
   

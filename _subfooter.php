@@ -10,7 +10,9 @@
           </div>
           <div class="contact-text">
             <h6 class="mb-1">Send Email</h6>
-            <a href="mailto:info@phoshfood.com" class="text-decoration-none">info@phoshfood.com</a>
+            <a href="mailto:info@phoshfood.com" class="text-decoration-none">
+              contactus@a2zic.com 
+            </a>
           </div>
         </div>
       </div>
@@ -23,7 +25,7 @@
           </div>
           <div class="contact-text">
             <h6 class="mb-1">WhatsApp</h6>
-            <a href="https://wa.me/923036580158" target="_blank" class="text-decoration-none">+92 303 6580158</a>
+            <a href="https://wa.me/+34611810946 " target="_blank" class="text-decoration-none">+34 611810946 </a>
           </div>
         </div>
       </div>
@@ -36,7 +38,7 @@
           </div>
           <div class="contact-text">
             <h6 class="mb-1">Customer Service Hours</h6>
-            <p class="mb-0">Mon – Sun, 9:00 – 18:00</p>
+            <p class="mb-0">7 am to 8 pm</p>
           </div>
         </div>
       </div>

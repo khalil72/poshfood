@@ -12,22 +12,20 @@ data-aos="fade-right" data-aos-duration="800"
 >
   <div class="container">
 
-    <!-- LEFT: Logo -->
+   
     <a class="navbar-brand d-flex align-items-center mx-3 mx-sm-0" href="index.php">
-      <img src="images/Calibite_logo.png" alt="Calibite Logo" height="40">
+      <img src="images/Calibite_logo.png" alt="Calibite Logo" height="50" width="75" class="image-fluid">
     </a>
 
-    <!-- Mobile Toggle -->
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav">
       <span class="navbar-toggler-icon ">
         
       </span>
     </button>
 
-    <!-- CENTER + RIGHT -->
+    
     <div class="collapse navbar-collapse" id="ftco-nav">
-
-      <!-- CENTER: Menu -->
       <ul class="navbar-nav mx-auto align-items-center gap-lg-4">
         <li class="nav-item">
           <a class="nav-link <?php echo ($currentPage=='index.php') ? 'active' : ''; ?>" href="index.php">
@@ -39,11 +37,11 @@ data-aos="fade-right" data-aos-duration="800"
             Our Menu
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link <?php echo ($currentPage=='how-it-works.php') ? 'active' : ''; ?>" href="how-it-works.php">
             How It Works
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link <?php echo ($currentPage=='contact.php') ? 'active' : ''; ?>" href="contact.php">
             Contact
@@ -52,7 +50,7 @@ data-aos="fade-right" data-aos-duration="800"
       </ul>
 
       <!-- RIGHT: Language -->
-       <div class="navbar-lang text-center mt-3 mt-lg-0 ms-lg-3">
+       <div class="navbar-lang ms-auto text-center mt-3 mt-lg-0 ms-lg-3">
         <div id="google_translate_element"></div>
       </div>
 
