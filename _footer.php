@@ -7,9 +7,7 @@
         <div class="footer-brand">
           <img src="images/Calibite_logo.png" alt="Calibite Logo" class="footer-logo mb-3">
           <p class="footer-text">
-            Phosh Food delivers fresh, macro-balanced meals across Spain. 
-            Chef-prepared, nutritionally designed, and ready to heat. 
-            Healthy eating made simple.
+            Calibite is NOT selling allergy free food. We cannot guarantee that our products are free from ingredients that may affect those with food allergies. At Calibite we are very much recognize the seriousness of food allergies and will not assume any liability for adverse reactions to our products.
           </p>
         </div>
            <div class="footer-social mt-4">

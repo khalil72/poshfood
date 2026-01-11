@@ -134,31 +134,30 @@ style="background-image: url('images/transparent-image-6.png');"
     <div class="col-md-8 text-center">
   <span class="text-white">Getting healthy meals is simple, fast, and hassle-free.</span>
   <h2 class="text-white font-bold mb-0">How It Works</h2>
-  <a href="/how-it-works.php" class="animated-link underline" data-aos="fade-up" data-aos-duration="800">
+  <!-- <a href="how-it-works.php" class="animated-link underline" data-aos="fade-up" data-aos-duration="800">
     Learn More <i class="icon fa fa-angle-right mx-2"></i>
-  </a>
+  </a> -->
 </div>
 
 
     </div>
     <div class="row" data-aos="fade-right" data-aos-duration="800">
       <div class="col-md-4 mb-4">
+          <a href="how-it-works.php" >
         <div class="work-step text-center">
-          <span class="step-number">01</span>
         
+             <span class="step-number">01</span>
             <img src="icons/checklist.avif" class="img mb-3"/>
-        
          <h4 class="mb-0 text-success ">Pick Your Meals</h4>
 <p>
   Choose from our weekly chef-designed menu tailored to your goals
 </p>
 
-
-
-
         </div>
+           </a>
       </div>
       <div class="col-md-4 mb-4">
+            <a href="how-it-works.php" >
         <div class="work-step text-center">
           <span class="step-number">02</span>
           
@@ -172,8 +171,10 @@ style="background-image: url('images/transparent-image-6.png');"
 </p>
 
         </div>
+        </a>
       </div>
       <div class="col-md-4 mb-4">
+        <a href="how-it-works.php" >
         <div class="work-step text-center">
           <span class="step-number">03</span>
          
@@ -184,6 +185,7 @@ style="background-image: url('images/transparent-image-6.png');"
   Receive fresh meals weekly, ready to heat and enjoy
 </p>
         </div>
+        </a>
       </div>
     </div>
   </div>
